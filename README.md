@@ -2,12 +2,15 @@
 说明：本模块为慢日志收集平台的基础组件-实时收集
 
 ## 如何部署
-1.环境要求
+### 1.环境要求
+
 - python3.7
 - mysql数据库（存慢日志）
 - FastAPI
 
-2.如何部署
+
+
+### 2.如何部署
 
 **2.1 服务端**
 
@@ -106,6 +109,28 @@ stdout_logfile_backups = 20     ;
 启动supervisor
 
 
+
+### 3.示例
+
+服务端数据库查看
+
+```
+mysql> select * from slowlogs limit 1\G
+*************************** 1. row ***************************
+           id: 1
+         dbid: 1
+      db_user: rw_hhy_api
+       app_ip: 10.105.3.203
+    thread_id: 4389
+exec_duration: 0.076693
+    rows_sent: 12919
+rows_examined: 25838
+   start_time: 1584929764
+  sql_pattern: select xxx from table1 where (table1.DOCKIND=? and table1.CHNLID in(?) and (table1.DOCSTATUS in(?) and (table1.TenantId=?) order by table1.DOCORDERPRI DESC,table1.GDORDER DESC,table1.DOCORDER DESC,table1.OPERTIME DESC;
+     orig_sql: select xxx from table1 where (table1.DOCKIND=7 and table1.CHNLID in(100000)) and (table1.DOCSTATUS in(10)) and (table1.TenantId=62) order by table1.DOCORDERPRI DESC,table1.GDORDER DESC,table1.DOCORDER DESC,table1.OPERTIME DESC;
+  fingerprint: 45eb6b5aaf9fac51a7ec75cc2d5290d4
+1 row in set (0.00 sec)
+```
 
 
 

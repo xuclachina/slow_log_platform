@@ -1,0 +1,10 @@
+# Time: 2020-03-03T15:09:03.804186+08:00
+# User@Host: monitor[monitor] @ localhost [127.0.0.1]  Id: 331578
+# Query_time: 0.000441  Lock_time: 0.000073 Rows_sent: 1  Rows_examined: 154
+SET timestamp=1583219343;
+SELECT VARIABLE_VALUE FROM performance_schema.global_status WHERE VARIABLE_NAME ='queries' LIMIT 1;
+# Time: 2020-03-03T15:09:04.804915+08:00
+# User@Host: monitor[monitor] @ localhost [127.0.0.1]  Id: 331579
+# Query_time: 0.000538  Lock_time: 0.000084 Rows_sent: 1  Rows_examined: 154
+SET timestamp=1583219344;
+SELECT VARIABLE_VALUE FROM performance_schema.global_status WHERE VARIABLE_NAME ='queries' LIMIT 1;
